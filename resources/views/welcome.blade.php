@@ -12,7 +12,7 @@
 
 
 
-    <a href="" class="btn">Find Ninjas</a>
+    <a href="/ninjas" class="btn">Find Ninjas</a>
 
 
 
