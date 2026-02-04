@@ -7,5 +7,19 @@ Route::get('/', function () {
 });
 
 Route::get('/ninjas', function () {
-    return view('ninjas.index');
+    $ninjas = [
+        ["name" => "Ryu", "skill" => 30, "id" => "1"],
+        ["name" => "Yoshi", "skill" => 50, "id" => "2"],
+        ["name" => "Hattori", "skill" => 70, "id" => "3"]
+    ];
+    return view('ninjas.index', [
+        'greeting' => "hello",
+        "ninjas" => $ninjas
+    ]);
+});
+Route::get('/ninjas/{id}', function ($id) {
+    // fetch ninja with id 
+    return view('ninjas.show', [
+        'id' => $id,
+    ]);
 });
