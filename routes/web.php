@@ -13,7 +13,7 @@ Route::get('/ninjas', function () {
         ["name" => "Hattori", "skill" => 70, "id" => "3"]
     ];
     return view('ninjas.index', [
-        'greeting' => "hello",
+        'greeting' => "hi",
         "ninjas" => $ninjas
     ]);
 });

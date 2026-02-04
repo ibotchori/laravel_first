@@ -6,14 +6,22 @@
 </head>
 <body>
 
-    <h2>Find Ninjas</h2>
-    <p>{{ $greeting }}</p>
+    <h2>Currently Viewing Ninjas</h2>
+    @if($greeting == "hello")
+    <p>Hi from the if statement</p>
+
+    @endif
+
 
 
     <ul>
-        <li><a href="/ninjas/{{ $ninjas[0]["id"] }}">{{$ninjas[0]["name"]}}</a></li>
-        <li><a href="/ninjas/{{ $ninjas[1]["id"] }}">{{$ninjas[1]["name"]}}</a></li>
-        <li><a href="/ninjas/{{ $ninjas[2]["id"] }}">{{$ninjas[2]["name"]}}</a></li>
+        @foreach($ninjas as $ninja)
+
+        <li>
+            <p>{{ $ninja["name"] }}</p>
+            <a href="/ninjas/{{ $ninja["id"] }}">View Details</a>
+        </li>
+        @endforeach
     </ul>
 
 </body>
