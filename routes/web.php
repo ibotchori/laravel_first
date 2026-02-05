@@ -10,7 +10,7 @@ Route::get('/ninjas', function () {
     $ninjas = [
         ["name" => "Ryu", "skill" => 30, "id" => "1"],
         ["name" => "Yoshi", "skill" => 50, "id" => "2"],
-        ["name" => "Hattori", "skill" => 70, "id" => "3"]
+        ["name" => "Hattori", "skill" => 80, "id" => "3"]
     ];
     return view('ninjas.index', [
         'greeting' => "hi",
