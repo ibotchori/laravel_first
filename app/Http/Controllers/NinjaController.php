@@ -20,25 +20,24 @@ class NinjaController extends Controller
         ]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+
+    public function show($id)
+    // route--> /ninjas/{id}
     {
-        //
+        $ninja = Ninja::findOrFail($id);
+
+        return view('ninjas.show', [
+            'ninja' => $ninja,
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
+    // route--> /ninjas/create
     {
-        //
+        return view('ninjas.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         //
