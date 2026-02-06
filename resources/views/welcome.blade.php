@@ -14,7 +14,7 @@
 
 
 
-    <a href="/ninjas" class="btn mt-4 inline-block">Find Ninjas</a>
+    <a href="{{ route('ninjas.index') }}" class="btn mt-4 inline-block">Find Ninjas</a>
 
 
 

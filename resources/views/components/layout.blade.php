@@ -11,8 +11,8 @@
     <header>
         <nav>
             <h1>Ninja Network</h1>
-            <a href="/ninjas">All Ninjas</a>
-            <a href="/ninjas/create">Create Ninja</a>
+            <a href="{{ route('ninjas.index') }}">All Ninjas</a>
+            <a href="{{ route('ninjas.create') }}">Create Ninja</a>
         </nav>
     </header>
 
