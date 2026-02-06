@@ -19,10 +19,10 @@ class NinjaController extends Controller
     }
 
 
-    public function show($id)
-    // route--> /ninjas/{id}
+    public function show(Ninja $ninja)
+    // route--> /ninjas/{ninja}
     {
-        $ninja = Ninja::with('dojo')->findOrFail($id);
+        $ninja->load('dojo'); // Eager load the related dojo
 
         return view('ninjas.show', [
             'ninja' => $ninja,
@@ -54,10 +54,9 @@ class NinjaController extends Controller
         return redirect()->route('ninjas.index')->with('success', 'Ninja created successfully!');
     }
 
-    public function destroy($id)
-    // route--> /ninjas/{id} (DELETE)
+    public function destroy(Ninja $ninja)
+    // route--> /ninjas/{ninja} (DELETE)
     {
-        $ninja = Ninja::findOrFail($id);
         $ninja->delete();
         return redirect()->route('ninjas.index')->with('success', 'Ninja deleted successfully!');
     }
