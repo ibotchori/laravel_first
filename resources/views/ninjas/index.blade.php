@@ -9,4 +9,7 @@
         </li>
         @endforeach
     </ul>
+
+
+    {{ $ninjas->links() }}
 </x-layout>
