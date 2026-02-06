@@ -8,9 +8,7 @@ use App\Models\Dojo;
 
 class NinjaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     // route--> /ninjas/
     {
@@ -53,6 +51,14 @@ class NinjaController extends Controller
 
         Ninja::create($validated);
 
+        return redirect()->route('ninjas.index');
+    }
+
+    public function destroy($id)
+    // route--> /ninjas/{id} (DELETE)
+    {
+        $ninja = Ninja::findOrFail($id);
+        $ninja->delete();
         return redirect()->route('ninjas.index');
     }
 }
